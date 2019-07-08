@@ -16,7 +16,7 @@ if(isset($_POST['btnCapNhat']))
     $kmdenngay = $_POST['km_denngay'];
 
     // Câu lệnh INSERT
-    $sql = "INSERT INTO `loaisanpham` (km_ten, km_noidung, km_tungay, km_denngay ) VALUES ('" . $kmten . "', '". $kmnoidung ."', '". $kmtungay ."', '". $kmdenngay."' );";
+    $sql = "INSERT INTO `khuyenmai` (km_ten, km_noidung, km_tungay, km_denngay ) VALUES ('" . $kmten . "', '". $kmnoidung ."', '". $kmtungay ."', '". $kmdenngay."' );";
 
     // Thực thi INSERT
     mysqli_query($conn, $sql);
