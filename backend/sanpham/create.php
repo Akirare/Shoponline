@@ -87,6 +87,9 @@ while($rowKhuyenMai = mysqli_fetch_array($resultKhuyenMai, MYSQLI_ASSOC))
 }
 /* --- End Truy vấn dữ liệu Khuyến mãi --- */
 
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+$ngayhientai = date('Y-m-d h:i:s');
+
 // 2. Nếu người dùng có bấm nút Đăng ký thì thực thi câu lệnh UPDATE
 if(isset($_POST['btnCapNhat'])) 
 {
@@ -100,7 +103,8 @@ if(isset($_POST['btnCapNhat']))
     $soluong = $_POST['sp_soluong'];
     $lsp_ma = $_POST['lsp_ma'];
     $nsx_ma = $_POST['nsx_ma'];
-    $km_ma = $_POST['km_ma'];
+    $km_ma = empty($_POST['km_ma']) ? 'NULL' : $_POST['km_ma'];
+    // print_r($km_ma);die;
 
     // Câu lệnh INSERT
     $sql = "INSERT INTO `sanpham` (sp_ten, sp_gia, sp_giacu, sp_mota_ngan, sp_mota_chitiet, sp_ngaycapnhat, sp_soluong, lsp_ma, nsx_ma, km_ma) VALUES ('$ten', $gia, $giacu, '$motangan', '$motachitiet', '$ngaycapnhat', $soluong, $lsp_ma, $nsx_ma, $km_ma);";
@@ -120,4 +124,5 @@ echo $twig->render('backend/sanpham/create.html.twig', [
     'ds_loaisanpham' => $dataLoaiSanPham,
     'ds_nhasanxuat' => $dataNhaSanXuat,
     'ds_khuyenmai' => $dataKhuyenMai,
+    'ngayhientai' => $ngayhientai
 ]);

@@ -15,4 +15,4 @@ $conn = mysqli_connect('127.0.0.1', 'root', '', 'salomon') or die('Xin lỗi, da
 // Lưu ý: gõ với bộ gõ UNIKEY, bảng mã là UNICODE
 $conn->query("SET NAMES 'utf8'"); 
 $conn->query("SET CHARACTER SET utf8");  
-$conn->query("SET SESSION collation_connection = 'utf8_unicode_ci'"); 
+$conn->query("SET SESSION collation_connection = 'utf8_unicode_ci'");

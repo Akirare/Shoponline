@@ -99,6 +99,8 @@ $sqlSelect = "SELECT * FROM `sanpham` WHERE sp_ma=$sp_ma;";
 // Thực thi câu truy vấn SQL để lấy về dữ liệu ban đầu của record cần update
 $resultSelect = mysqli_query($conn, $sqlSelect);
 $sanphamRow = mysqli_fetch_array($resultSelect, MYSQLI_ASSOC); // 1 record
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+$sanphamRow['sp_ngaycapnhat'] = date('d/m/Y h:i:s');
 /* --- End Truy vấn dữ liệu Sản phẩm theo khóa chính --- */
 
 // 2. Nếu người dùng có bấm nút Đăng ký thì thực thi câu lệnh UPDATE

@@ -22,7 +22,7 @@ Danh sách Loại sản phẩm
 <table class="table table-bordered table-hover mt-2">
     <thead class="thead-dark">
         <tr>
-
+            <th>Mã loại sản phẩm</th>
             <th>Tên loại sản phẩm</th>
             <th>Mô tả loại sản phẩm</th>
             <th>Hành động</th>
@@ -31,7 +31,7 @@ Danh sách Loại sản phẩm
     <tbody>
         {% for loaisanpham in ds_loaisanpham %}
         <tr>
-            
+            <td>{{ loaisanpham.lsp_ma }}</td>
             <td>{{ loaisanpham.lsp_ten }}</td>
             <td>{{ loaisanpham.lsp_mota }}</td>
             <td>

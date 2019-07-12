@@ -55,9 +55,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_ASSOC))
         'nsx_ten' => $row['nsx_ten'],
         'km_tomtat' => $km_tomtat,
     );
-    
 }
-
 // Yêu cầu `Twig` vẽ giao diện được viết trong file `backend/sanpham/index.html.twig`
 // với dữ liệu truyền vào file giao diện được đặt tên là `ds_sanpham`
 echo $twig->render('backend/sanpham/index.html.twig', ['ds_sanpham' => $data] );
